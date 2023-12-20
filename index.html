@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch Demo</title>
+    <script>
+
+        let url1 = 'https://jsonplaceholder.typicode.com/todos';
+        fetch(url1).then(function(response){
+            return response.json()
+        }).then(function(data){
+            console.log(data);
+            document.getElementById('url1').innerHTML = data[0].title;
+        });
+
+
+        let url2 = 'https://opendata.wifi.at/OpenJsonData.json';
+        fetch(url2).then(function(response){
+            return response.json()
+        }).then(function(data){
+            console.log(data);
+            document.getElementById('url2').innerHTML = data[0]['Titel'];
+        });
+
+    </script>
+</head>
+
+<body>
+
+<div id="url1"> hallo ajax welt </div>
+
+<div id="url2"> hallo ajax welt </div>
+
+</body>
+</html>
